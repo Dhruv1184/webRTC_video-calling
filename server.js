@@ -14,7 +14,7 @@ app.use(express.static("public"))
 
 app.get('/',(req,res)=>{
     console.log("get request send");
-    res.sendFile(join(__dirName + '/app/index.html'))
+    res.sendFile(join(__dirName + '/index.html'))
 
     
     // res.sendFile()
