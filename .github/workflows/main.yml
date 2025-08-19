@@ -1,0 +1,17 @@
+name: Render Deploy
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-preview:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Render Preview Deploy
+        run: |
+          curl -X POST "https://api.render.com/deploy/srv-cs7ni32j1k6c73fk1lt0?key=AWDu46mWHms"
